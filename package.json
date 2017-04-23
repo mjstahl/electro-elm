@@ -1,0 +1,20 @@
+{
+  "name": "electro-elm",
+  "version": "1.0.0",
+  "description": "Render 'Hello World' as an Electron application with Elm",
+  "main": "index.js",
+  "dependencies": {
+    "electron-prebuilt": "^1.4.13"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0"
+  },
+  "scripts": {
+    "elm": "elm make Main.elm --output elm.js || true",
+    "elm:watch": "chokidar '**/*.elm' -c 'npm run elm'",
+    "start": "electron main.js",
+    "watch": "npm run start & npm run elm:watch & wait"
+  },
+  "author": "",
+  "license": "MIT"
+}
